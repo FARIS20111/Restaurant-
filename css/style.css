@@ -16,6 +16,9 @@
     --maineTitelColer--: #333;
     --scendTitelColer--: #666;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{ 
     background-color: #f7f7f7;
     z-index: 9999;
@@ -105,7 +108,7 @@ transition: .3s linear;
     box-shadow: 0px 0px 20px rgb(189, 188, 188);
     position: fixed;
     top: 0;left: 0;
-    z-index: 99999;
+    z-index: 1000;
 }
 .layer-food .container{
     display: flex;
@@ -141,6 +144,7 @@ transition: .3s linear;
         display: none;
     }
 }
+
 .cont-mnue .mnue ul{
     display: flex;
     justify-content: space-evenly;
@@ -160,6 +164,49 @@ transition: .3s linear;
     color: var(--maineColer--);
     transition: color .3s;
 }
+
+.container .down-mnue{ 
+    display: none;
+}
+
+@media (max-width : 768px) {
+    .container .down-mnue{ 
+        display: block;
+    }
+    .container .down-mnue ul {
+        list-style: none;
+    }
+    .container .down-mnue{ 
+        width: 100%;
+        height: 0px;
+        z-index: 1;
+        overflow: hidden;
+        transition: .5s;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: rgb(255, 255, 255);
+        z-index: 50000;
+        }
+       
+        .container .down-mnue li { 
+            background-color: #FFF;
+        }
+        .container .down-mnue ul li a { 
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            color: var(--scendTitelColer--);
+            display: block;
+            padding: 15px; 
+            margin-bottom: 8px;
+            margin-top: 2px;
+            border:#EEE solid 1px;
+            border-left: 3px solid var(--maineColer--);
+        }
+        
+}
 .bruger{ 
     display: none;
 }
@@ -175,54 +222,6 @@ transition: .3s linear;
     padding: 8px;
     border: 1px solid var(--scendTitelColer--);
 }
-.container .pos{ 
-    position: relative;
-}
-.container .down-mnue{ 
-width: 100%;
-height: 0px;
-z-index: 1;
-overflow: hidden;
-transition: .5s;
-position: absolute;
-top: 49px;
-left: 0;
-background-color: rgb(255, 255, 255);
-z-index: 50000;
-}
-.container .down-mnue{ 
-    display: none;
-}
-@media (max-width : 768px) {
-    .container .down-mnue{ 
-        display: block;
-    }
-    .container .down-mnue ul {
-        list-style: none;
-    }
-    
-}
-.container .down-mnue ul {
-    list-style: none;
-}
-
-.container .down-mnue li { 
-    background-color: #FFF;
-}
-.container .down-mnue ul li a { 
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    text-transform: capitalize;
-    color: var(--scendTitelColer--);
-    display: block;
-    padding: 15px; 
-    margin-bottom: 8px;
-    margin-top: 2px;
-    border:#EEE solid 1px;
-    border-left: 3px solid var(--maineColer--);
-}
-
 /*End layer-food */
 
 /* START-BIG-IMGE */
@@ -240,7 +239,6 @@ z-index: 50000;
         height: fit-content;
         padding-bottom: 20px;
         padding-top: 10px;
-        
     }
 }
 .layer-big-img .container{ 
@@ -282,13 +280,9 @@ z-index: 50000;
         font-weight: bold;
     }
 }
-@media (max-width : 453px) {
-   
-}
 .big-img img{ 
 width: 100%;
 animation: up-down 1s linear infinite alternate;
-
 }
 @keyframes up-down{ 
     form{ 
@@ -298,13 +292,13 @@ animation: up-down 1s linear infinite alternate;
         transform: translatey(20px);
     }
 }
+
 /* END-BIG-IMGE */
 
 /*  START-Speciality  */
 .container .six-col{
 display: grid;
 grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
-/* grid-template-rows: repeat(6,auto); */
 gap: 20px;
 justify-content: center;
 }
@@ -359,7 +353,6 @@ height: 100%;
 .container .box-prise { 
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(300px , 1fr));
-    /* grid-template-rows: repeat(6,auto); */
     gap: 20px;
 }
 .container .box-prise > div{ 
@@ -393,7 +386,7 @@ height: 100%;
     left: 10px;
     top: 10px;
     color: #fff;
-    z-index: 1000;
+    z-index: 999;
     background-color: var(--maineColer--);
     padding: 10px 12px;
     border-radius: 5px;
@@ -427,7 +420,6 @@ height: 100%;
     text-align: center;
     padding: 15px;
     height: 100%;
-    
 }
 .delevary .dle-img img { 
     border: 10px solid #fff;
@@ -441,13 +433,11 @@ height: 100%;
 }
  /* END DELEVRY FOOD  */
 
-
  /* SATART GALLERY */
 
 .gallery-grid{ 
     display: grid;
     grid-template-columns: repeat(auto-fill,minmax(280px , 1fr));
-    /* grid-template-rows: repeat(6,auto); */
     gap: 20px;
     justify-content: center;
  }
@@ -462,7 +452,6 @@ position: relative;
 overflow: hidden;
 border-radius: 5px;
  }
-
  .titel-gallery { 
      display: flex;
      flex-direction: column;
@@ -480,7 +469,6 @@ border-radius: 5px;
 .gallery-box:hover .titel-gallery{ 
     top: 0;
 }
-
 .titel-gallery .layerr{
     position: absolute;
     top: 0;
@@ -505,7 +493,6 @@ border-radius: 5px;
     top: 0;
     left: 0;
 }
-
  /* END GALLERY */
 
  /* START PEPL */
@@ -518,8 +505,6 @@ border-radius: 5px;
     align-items: flex-start;
     margin-top: 100px;
 }
-
-
 .grid-pep .box-pep{ 
     height: 310px;
     background-color: var(--maineTitelColer--);
@@ -540,7 +525,6 @@ border-radius: 5px;
     position: absolute;
     top: -60px;
 }
-
 .rete{ 
     width: 100%;    
     height: 100%;
@@ -553,19 +537,16 @@ border-radius: 5px;
     color: #fff;
     margin-top: 40px;
 }
-
 .rete p{ 
     text-align: center;
     color: #eee;
     line-height: 1.4;
 }
-
 .rete .ii i{ 
    font-size: 25px;
    color: var(--maineColer--);
 }
  /* END PEPL */
-
 
  /* START CONTACT */
  .grid-oreder{ 
@@ -635,15 +616,11 @@ border-radius: 5px;
     
 }
  /* END CONTACT */
-
-
 .cont-but{ 
     background-color: #000;
     height: fit-content;
     padding: 20px;
-    
 }
-
 .cont-but .container{ 
     display: flex;
     flex-direction: column;
@@ -651,7 +628,6 @@ border-radius: 5px;
     justify-content: space-evenly;
     height: 100%;
 }
-
 .cont-but .container .butns{ 
     width: 90%;
     margin:0px auto;
@@ -676,7 +652,6 @@ border-radius: 5px;
     color: var(--maineColer--);
 }
 
-
 @media (max-width : 450px) {
     .cont-but .container .butns{ 
         flex-direction: column;
@@ -686,3 +661,17 @@ border-radius: 5px;
         font-size: 16px;
     }
 }
+.loader-container{
+    position: fixed;
+    top:0; left:0;
+    z-index: 10000;
+    background:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:100%;
+    width:100%;
+  }
+  .loader-container.fade-out{
+    top:-120%;
+  }
