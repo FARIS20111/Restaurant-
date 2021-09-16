@@ -29,12 +29,12 @@
       <div class="cont-mnue">
         <div class="mnue">
           <ul>
-            <li><a href="#">home</a></li>
-            <li><a href="speciality">Speciality</a></li>
-            <li><a href="#">Popular </a></li>
-            <li><a href="#">Gallery </a></li>
-            <li><a href="#">Review</a></li>
-            <li><a href="#">Order</a></li>
+            <li><a href="#home">home</a></li>
+            <li><a href="#Speciality">Speciality</a></li>
+            <li><a href="#Popular">Popular </a></li>
+            <li><a href="#Gallery">Gallery </a></li>
+            <li><a href="#Review">Reviews</a></li>
+            <li><a href="#Order">Order</a></li>
           </ul>
         </div> <!--mnue-->
         <div class="bruger">
@@ -47,12 +47,12 @@
   <div class="down-mnue" id="drop">
     <div class="mnue">
       <ul>
-        <li><a href="#">home</a></li>
-        <li><a href="#">Speciality</a></li>
-        <li><a href="#">Popular </a></li>
-        <li><a href="#">Gallery </a></li>
-        <li><a href="#">Review</a></li>
-        <li><a href="#">Order</a></li>
+        <li><a href="#home">home</a></li>
+        <li><a href="#Speciality">Speciality</a></li>
+        <li><a href="#Popular">Popular </a></li>
+        <li><a href="#Gallery">Gallery </a></li>
+        <li><a href="#Review">Reviews</a></li>
+        <li><a href="#Order">Order</a></li>
       </ul>
     </div> <!--mnue-->
   </div><!--down-mnue-->
@@ -63,7 +63,7 @@
 
 <!-- START-BIG- IMGE -->
 
-<div class="layer-big-img">
+<div class="layer-big-img" id="home">
   <div class="container">
     <div class="Describe">
       <h1>Food Made With Love</h1>
@@ -80,7 +80,7 @@
 
 <!-- START-Speciality --> 
 
-<div class="container" id="speciality">
+<div class="container" id="Speciality">
   <div class="same">
     <h1>our <span>speciality</span></h1>
   </div>
@@ -148,7 +148,7 @@
 
 <!-- START Popular FOOD -->
 
-<div class="container">
+<div class="container" id="Popular">
   <div class="same">
     <h1>Most <span>Popular</span> Foods</h1>
   </div>
@@ -290,7 +290,7 @@
 
 <!-- START Gallery -->
 
-<div class="container"> 
+<div class="container" id="Gallery"> 
   <div class="same">
     <h1>our food <span>gallery</span></h1>
   </div>
@@ -411,7 +411,7 @@
 <!-- END Gallery -->
  
 <!-- START PEPOLE -->
-<div class="container"> 
+<div class="container" id="Review"> 
   <div class="same">
     <h1>Our Customers <span>Reviews</span></h1>
   </div>
@@ -467,7 +467,7 @@
 
 
 <!--START CONTACT-->
-<div class="container"> 
+<div class="container" id="Order"> 
   <div class="same">
     <h1><span>order</span> now</h1>
   </div>
@@ -513,9 +513,12 @@
     </div>
 </div>
 </div>
-
 <!-- END  BUTNS -->
 
+
+<div class="loader-container">
+  <img src="images/loader.gif" alt="">
+</div>
 
 
 
@@ -536,6 +539,19 @@ but.onclick = function(){
     drop.style.height = ("0px")
   }
 }
+
+//
+
+
+function loader(){
+  document.querySelector('.loader-container').classList.add('fade-out');
+}
+
+function fadeOut(){
+  setInterval(loader, 2500);
+}
+
+window.onload = fadeOut();
 </script>
 
 
